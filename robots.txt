@@ -3,4 +3,4 @@ Allow: /
 Disallow: /privacy.html
 Disallow: /terms.html
 
-Sitemap: https://glp1bridge.com/sitemap.xml
+Sitemap: https://glp1bridge.vercel.app/sitemap.xml
