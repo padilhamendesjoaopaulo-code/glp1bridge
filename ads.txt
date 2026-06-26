@@ -1,0 +1,4 @@
+# ads.txt for GLP1Bridge.com
+# Replace pub-XXXXXXXXXXXXXXXX with your real AdSense publisher ID (digits only),
+# then keep this file at the site root so AdSense can verify your inventory.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

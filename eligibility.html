@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medicare GLP-1 Bridge Eligibility Check (Free, 5 Questions) | GLP1Bridge</title>
+<meta name="description" content="Free 5-question eligibility wizard for the Medicare GLP-1 Bridge program. See whether you likely qualify for Wegovy, Zepbound, or Ozempic coverage under Part D.">
+<link rel="canonical" href="https://glp1bridge.com/eligibility.html">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#0d6e72"/>
+          <path d="M7 30c6 0 6-9 17-9s11 9 17 9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M7 30v6M41 30v6M16 24v12M32 24v12M24 21v15" stroke="#f0962a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        GLP1<b>Bridge</b>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eligibility.html" aria-current="page">Eligibility</a></li>
+        <li><a href="covered-drugs.html">Covered Drugs</a></li>
+        <li><a href="cost-calculator.html">Cost Calculator</a></li>
+        <li><a href="prior-authorization.html">Prior Auth</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a class="btn btn-primary" href="eligibility.html">Check Eligibility</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="page-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> › Eligibility</nav>
+    <h1>Check your Bridge eligibility</h1>
+    <p class="lead">Answer 5 quick questions. We'll give you a clear, plain-English read on whether you likely qualify — no sign-up, nothing saved.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Intro paragraph -->
+  <section class="section" style="padding-bottom:1rem">
+    <div class="prose">
+      <p>The Medicare GLP-1 Bridge program ties coverage to your <strong>Part D enrollment</strong> and a <strong>qualifying medical condition</strong>. This tool mirrors the basic screening logic plans use. It does not collect or store any personal information, and it is not a coverage determination — only your plan can make that decision.</p>
+    </div>
+  </section>
+
+  <!-- AD: after intro, BEFORE wizard (never inside it) -->
+  <aside class="ad-slot" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="3333333333"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+  <!-- ===== WIZARD (no ads inside) ===== -->
+  <section class="section" style="padding-top:1rem">
+    <div class="wizard" id="eligibility-wizard">
+      <div class="wizard-progress" aria-hidden="true"></div>
+
+      <div class="wizard-step active">
+        <p class="q-title">1. Are you currently enrolled in Medicare?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="medicare" value="yes"> Yes, I'm enrolled in Medicare</label>
+          <label class="option"><input type="radio" name="medicare" value="no"> No, I'm not enrolled</label>
+        </div>
+      </div>
+
+      <div class="wizard-step">
+        <p class="q-title">2. Do you have Medicare Part D (prescription drug) coverage?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="partd" value="yes"> Yes — standalone Part D or Medicare Advantage with drug coverage</label>
+          <label class="option"><input type="radio" name="partd" value="no"> No, or I'm not sure</label>
+        </div>
+        <div class="wizard-nav"><button class="btn btn-ghost" data-back>← Back</button><span></span></div>
+      </div>
+
+      <div class="wizard-step">
+        <p class="q-title">3. Which best describes your qualifying condition?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="condition" value="diabetes"> Type 2 diabetes</label>
+          <label class="option"><input type="radio" name="condition" value="cardio"> Heart disease / cardiovascular risk</label>
+          <label class="option"><input type="radio" name="condition" value="obesity"> Obesity (without diabetes)</label>
+          <label class="option"><input type="radio" name="condition" value="none"> None of these</label>
+        </div>
+        <div class="wizard-nav"><button class="btn btn-ghost" data-back>← Back</button><span></span></div>
+      </div>
+
+      <div class="wizard-step">
+        <p class="q-title">4. Are you currently taking, or has a doctor recommended, a GLP-1 medication?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="taking" value="yes"> Yes</label>
+          <label class="option"><input type="radio" name="taking" value="no"> Not yet, but I'm interested</label>
+        </div>
+        <div class="wizard-nav"><button class="btn btn-ghost" data-back>← Back</button><span></span></div>
+      </div>
+
+      <div class="wizard-step">
+        <p class="q-title">5. Do you already have a prior authorization on file for a GLP-1?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="priorauth" value="yes"> Yes</label>
+          <label class="option"><input type="radio" name="priorauth" value="no"> No / Not sure</label>
+        </div>
+        <div class="wizard-nav"><button class="btn btn-ghost" data-back>← Back</button><span></span></div>
+      </div>
+
+      <!-- ===== RESULT (no ads) ===== -->
+      <div class="wizard-result" role="status" aria-live="polite">
+        <div class="result-banner maybe">
+          <h3 data-result-title>Your result</h3>
+          <p style="margin:0;opacity:.95">Based on your answers to the Bridge screening questions:</p>
+        </div>
+        <ul data-result-body style="font-size:1.1rem"></ul>
+        <div class="callout warn">
+          <strong>This is not a coverage decision.</strong>
+          <p>Only your Medicare Part D plan can determine coverage. Use this as a starting point, then confirm with your plan and prescriber.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="prior-authorization.html">Next: Prior authorization guide →</a>
+          <a class="btn btn-teal" href="cost-calculator.html">Estimate my cost</a>
+          <button class="btn btn-ghost" data-restart>↺ Start over</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AD: after the tool/result block -->
+  <aside class="ad-slot" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="4444444444"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+  <section class="section">
+    <h2>What "qualifying condition" means</h2>
+    <div class="prose">
+      <p>Medicare Part D coverage of GLP-1 medications has historically required a recognized medical indication rather than weight loss alone. Type 2 diabetes is the most established, and the FDA has approved certain GLP-1s (such as Wegovy) for reducing cardiovascular risk in some patients. Obesity-only coverage is the newest and most plan-dependent area. See our <a href="covered-drugs.html">covered drugs comparison</a> and <a href="faq.html">FAQ</a> for details.</p>
+      <p class="small muted"><strong>Sources:</strong> <a href="https://www.cms.gov" rel="nofollow noopener" target="_blank">CMS.gov</a> Part D coverage guidance; <a href="https://www.fda.gov" rel="nofollow noopener" target="_blank">FDA.gov</a> drug approvals.</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<section class="disclaimer-band">
+  <div class="container">
+    <p><strong>Disclaimer:</strong> GLP1Bridge.com is an independent informational resource and is <strong>not</strong> affiliated with, endorsed by, or operated by Medicare, CMS, or any drug manufacturer. Content is for general education only and is not medical, legal, or financial advice. Always confirm coverage details with your plan and consult a licensed professional. Sources: <a href="https://www.cms.gov" rel="nofollow noopener" target="_blank">CMS.gov</a>, <a href="https://www.fda.gov" rel="nofollow noopener" target="_blank">FDA.gov</a>.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <span class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" style="width:30px;height:30px">
+          <rect width="48" height="48" rx="10" fill="#128a8f"/>
+          <path d="M7 30c6 0 6-9 17-9s11 9 17 9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M7 30v6M41 30v6M16 24v12M32 24v12M24 21v15" stroke="#f0962a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        GLP1Bridge
+      </span>
+      <p style="margin-top:.75rem;max-width:38ch">Clear, independent guidance on the Medicare GLP-1 Bridge program for beneficiaries and their families.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Guides</h4>
+      <ul>
+        <li><a href="eligibility.html">Eligibility Wizard</a></li>
+        <li><a href="cost-calculator.html">Cost Calculator</a></li>
+        <li><a href="weight-projection.html">Weight Projection</a></li>
+        <li><a href="covered-drugs.html">Covered Drugs</a></li>
+        <li><a href="prior-authorization.html">Prior Authorization</a></li>
+        <li><a href="non-medicare-options.html">Other Options</a></li>
+        <li><a href="pipeline-drugs.html">Pipeline Tracker</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© <span data-year>2026</span> GLP1Bridge.com — Independent &amp; not affiliated with Medicare/CMS.</span>
+      <span>Educational information only • Not medical advice</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

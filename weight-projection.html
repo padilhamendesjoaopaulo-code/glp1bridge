@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-1 Weight Loss Projection Calculator (Wegovy & Zepbound) | GLP1Bridge</title>
+<meta name="description" content="Estimate your weight loss over time on Wegovy or Zepbound. Free week-by-week projection table and visual chart based on clinical-trial average results.">
+<link rel="canonical" href="https://glp1bridge.com/weight-projection.html">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#0d6e72"/>
+          <path d="M7 30c6 0 6-9 17-9s11 9 17 9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M7 30v6M41 30v6M16 24v12M32 24v12M24 21v15" stroke="#f0962a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        GLP1<b>Bridge</b>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eligibility.html">Eligibility</a></li>
+        <li><a href="covered-drugs.html">Covered Drugs</a></li>
+        <li><a href="cost-calculator.html">Cost Calculator</a></li>
+        <li><a href="prior-authorization.html">Prior Auth</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a class="btn btn-primary" href="eligibility.html">Check Eligibility</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="page-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="covered-drugs.html">Covered Drugs</a> › Weight Projection</nav>
+    <h1>Weight-loss projection calculator</h1>
+    <p class="lead">See an estimated week-by-week curve based on clinical-trial averages. Adjust your starting weight, drug, and timeframe.</p>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section" style="padding-bottom:1rem">
+    <div class="prose">
+      <p>This tool estimates total body-weight loss over time using the <strong>average results from each drug's pivotal clinical trial</strong>. Real results vary widely from person to person and depend on dose, diet, activity, and how long you stay on treatment. Use this as a rough planning guide, not a promise.</p>
+    </div>
+  </section>
+
+  <!-- AD: after intro -->
+  <aside class="ad-slot" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1515151515" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+  <!-- ===== PROJECTION TOOL (Option D) ===== -->
+  <section class="section" style="padding-top:1rem">
+    <div class="calc-grid" id="projection-calc">
+      <div class="calc-panel">
+        <div class="field">
+          <label for="startWeight">Starting weight: <span class="range-val"><span data-start-val>220</span> lb</span></label>
+          <div class="range-row">
+            <input type="range" id="startWeight" name="startWeight" min="120" max="400" value="220" step="5">
+          </div>
+        </div>
+        <div class="field">
+          <label for="projDrug">Medication</label>
+          <select class="input" id="projDrug" name="projDrug">
+            <option value="wegovy">Wegovy — ~15% at 68 weeks</option>
+            <option value="zepbound">Zepbound — ~20% at 72 weeks</option>
+            <option value="foundayo">Foundayo — ~12% (illustrative)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="projWeeks">Duration: <span class="range-val"><span data-weeks-val>68</span> wks</span></label>
+          <div class="range-row">
+            <input type="range" id="projWeeks" name="projWeeks" min="4" max="72" value="68" step="4">
+          </div>
+        </div>
+        <p class="small muted">Model uses an ease-out curve approaching each drug's trial-average loss at its study endpoint.</p>
+      </div>
+
+      <div>
+        <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="stat"><div class="num" data-stat-lost>-25 lb</div><div class="lbl">Estimated lost</div></div>
+          <div class="stat"><div class="num" data-stat-final>195 lb</div><div class="lbl">Projected weight</div></div>
+          <div class="stat"><div class="num" data-stat-pct>-11.6%</div><div class="lbl">Of body weight</div></div>
+        </div>
+
+        <h3>Projected curve</h3>
+        <div class="chart" data-chart aria-hidden="true"></div>
+
+        <h3>Week-by-week estimate</h3>
+        <div class="table-wrap">
+          <table class="data" style="min-width:480px">
+            <thead><tr><th>Week</th><th>Projected weight</th><th>Total lost</th><th>% of body weight</th></tr></thead>
+            <tbody data-proj-body></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AD: between sections -->
+  <aside class="ad-slot" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1616161616" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+  <section class="section">
+    <h2>About these numbers</h2>
+    <div class="prose">
+      <p>The percentages reflect average total body-weight reductions reported in the medications' pivotal trials: roughly <strong>15% for semaglutide 2.4&nbsp;mg (Wegovy) at 68 weeks</strong> and roughly <strong>20% for tirzepatide (Zepbound) at 72 weeks</strong>. Weight loss generally builds gradually during dose titration and then continues more slowly. Stopping treatment often leads to partial regain.</p>
+      <div class="callout warn"><strong>This is an estimate, not medical advice.</strong><p>Your results depend on many personal factors. Discuss realistic goals with your prescriber.</p></div>
+      <p class="small muted"><strong>Sources:</strong> <a href="https://www.fda.gov" rel="nofollow noopener" target="_blank">FDA.gov</a> drug labeling for Wegovy and Zepbound; published pivotal trial summaries.</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="covered-drugs.html">Compare covered drugs →</a>
+      <a class="btn btn-teal" href="eligibility.html">Check my eligibility</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<section class="disclaimer-band">
+  <div class="container">
+    <p><strong>Disclaimer:</strong> GLP1Bridge.com is an independent informational resource and is <strong>not</strong> affiliated with Medicare, CMS, or any drug manufacturer. Projections are illustrative estimates based on trial averages — individual results vary and this is not medical advice. Sources: <a href="https://www.fda.gov" rel="nofollow noopener" target="_blank">FDA.gov</a>, <a href="https://www.cms.gov" rel="nofollow noopener" target="_blank">CMS.gov</a>.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <span class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" style="width:30px;height:30px">
+          <rect width="48" height="48" rx="10" fill="#128a8f"/>
+          <path d="M7 30c6 0 6-9 17-9s11 9 17 9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M7 30v6M41 30v6M16 24v12M32 24v12M24 21v15" stroke="#f0962a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        GLP1Bridge
+      </span>
+      <p style="margin-top:.75rem;max-width:38ch">Clear, independent guidance on the Medicare GLP-1 Bridge program for beneficiaries and their families.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Guides</h4>
+      <ul>
+        <li><a href="eligibility.html">Eligibility Wizard</a></li>
+        <li><a href="cost-calculator.html">Cost Calculator</a></li>
+        <li><a href="weight-projection.html">Weight Projection</a></li>
+        <li><a href="covered-drugs.html">Covered Drugs</a></li>
+        <li><a href="prior-authorization.html">Prior Authorization</a></li>
+        <li><a href="non-medicare-options.html">Other Options</a></li>
+        <li><a href="pipeline-drugs.html">Pipeline Tracker</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© <span data-year>2026</span> GLP1Bridge.com — Independent &amp; not affiliated with Medicare/CMS.</span>
+      <span>Educational information only • Not medical advice</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
