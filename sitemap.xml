@@ -9,6 +9,12 @@
   <url><loc>https://glp1bridge.vercel.app/non-medicare-options.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://glp1bridge.vercel.app/pipeline-drugs.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://glp1bridge.vercel.app/faq.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/articles.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/ozempic-vs-wegovy-medicare.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/prior-auth-denied.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/glp1-cardiovascular-coverage.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/medicare-advantage-glp1.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://glp1bridge.vercel.app/glp1-generics-2026.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://glp1bridge.vercel.app/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://glp1bridge.vercel.app/contact.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://glp1bridge.vercel.app/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>

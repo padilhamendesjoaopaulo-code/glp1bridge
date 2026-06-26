@@ -148,12 +148,16 @@
     var calc = document.getElementById("cost-calc");
     if (!calc) return;
 
+    // Medicare Part D annual out-of-pocket cap (Inflation Reduction Act).
+    // ~$2,100 for 2026 (indexed). Once reached, covered drugs cost $0 for the
+    // rest of the calendar year.
+    var CAP_PER_YEAR = 2100;
+
     // List prices are approximate U.S. retail (no insurance) and are used
     // only to illustrate potential out-of-pocket ranges.
     var DRUGS = {
       wegovy:   { name: "Wegovy", list: 1349 },
       zepbound: { name: "Zepbound", list: 1086 },
-      foundayo: { name: "Foundayo", list: 999 },
       ozempic:  { name: "Ozempic", list: 969 }
     };
 
@@ -182,19 +186,34 @@
           break;
         case "partd":
           monthly = 0.25 * d.list;
-          note = "Typical Part D coinsurance before reaching the catastrophic phase. Your plan's tier and deductible will change this.";
+          note = "Typical Part D coinsurance before reaching the annual out-of-pocket cap. Your plan's tier and deductible will change this.";
           break;
         case "savings":
           monthly = d.list * 0.5;
-          note = "Manufacturer savings programs are generally NOT available to Medicare members. Shown for comparison only.";
+          note = "Illustrative price with a manufacturer savings card — typically only available to people with commercial insurance. These cards generally EXCLUDE Medicare members, so this is shown for comparison only.";
           break;
         default:
           monthly = d.list;
           note = "Full cash price with no coverage applied.";
       }
 
+      var total = monthly * m;
+
+      // Apply the Medicare Part D annual out-of-pocket cap to covered scenarios
+      // (Bridge and Part D). The cap resets each calendar year, so scale it by
+      // the number of years covered. Cash price isn't a covered Part D drug, so
+      // no cap applies there.
+      if (coverage.value === "bridge" || coverage.value === "partd") {
+        var capForPeriod = CAP_PER_YEAR * Math.ceil(m / 12);
+        if (total > capForPeriod) {
+          total = capForPeriod;
+          note += " Your total is limited by the Medicare Part D out-of-pocket cap (about " +
+            money(CAP_PER_YEAR) + "/year), after which covered drugs cost $0.";
+        }
+      }
+
       outMonthly.textContent = money(monthly);
-      outTotal.textContent = money(monthly * m);
+      outTotal.textContent = money(total);
       outNote.textContent = note;
     }
 
@@ -212,8 +231,7 @@
     // Sources cited on-page (FDA labeling / NEJM trial summaries).
     var DRUGS = {
       wegovy:   { name: "Wegovy (semaglutide 2.4mg)", pct: 0.15, weeks: 68 },
-      zepbound: { name: "Zepbound (tirzepatide)",     pct: 0.205, weeks: 72 },
-      foundayo: { name: "Foundayo (oral GLP-1)",      pct: 0.12, weeks: 64 }
+      zepbound: { name: "Zepbound (tirzepatide)",     pct: 0.205, weeks: 72 }
     };
 
     var startW = calc.querySelector("[name=startWeight]");
